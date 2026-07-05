@@ -20,12 +20,14 @@ const Application = () => {
 
   const { data, isLoading, error } = useFetchReservations();
 
-  // Ponechá celý text datumu včetně roku, aby se zobrazoval stejně i po spuštění registrace
-  const formatDisplayDate = (dateString: string) => dateString.trim();
+  const formatDisplayDate = (dateString: string, includeYear = true) => {
+    const trimmedDate = dateString.trim();
+    return includeYear ? trimmedDate : trimmedDate.replace(/\s\d{4}$/, '');
+  };
 
   return (
     /* Zpátky k čistému Tailwindu: shora dolů. Začíná lightPink, uprostřed ztmavne do darkPink a dole se vrátí do lightPink, aby plynule navázal a nevznikl pruh */
-    <section id="prihlaska" className="w-full pb-16 bg-gradient-to-b from-lightPink via-darkPink to-lightPink">
+    <section id="prihlaska" className="w-full pb-16 bg-lightPink md:bg-gradient-to-b md:from-lightPink md:via-darkPink md:to-lightPink">
       <div className="flex flex-wrap justify-around w-full pt-16 mx-auto lg:w-4/5 lg:pb-16">
         {!isRegistrationOpen && (
           <div className="w-full notify-headline">
@@ -37,7 +39,7 @@ const Application = () => {
                   1. TURNUS
                 </h2>
                 <p className="text-darkBlue font-black text-xl md:text-2xl mt-2 whitespace-nowrap">
-                  17. 8. – 20. 8. 2026
+                  {formatDisplayDate(turnus1.displayDate, false)}
                 </p>
               </div>
 
@@ -54,7 +56,7 @@ const Application = () => {
                   2. TURNUS
                 </h2>
                 <p className="text-darkBlue font-black text-xl md:text-2xl mt-2 whitespace-nowrap">
-                  24. 8. – 27. 8. 2026
+                  {formatDisplayDate(turnus2.displayDate, false)}
                 </p>
               </div>
             </div>
