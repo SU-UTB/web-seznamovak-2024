@@ -20,12 +20,8 @@ const Application = () => {
 
   const { data, isLoading, error } = useFetchReservations();
 
-  // Pomocná funkce, která ořízne rok a případné závorky z textu datumu
-  const formatDisplayDate = (dateString: string) => {
-    // Vezme pouze dny a měsíce (např. "17. 8. – 20. 8.")
-    const parts = dateString.split(' ');
-    return `${parts[0]} ${parts[1]} ${parts[2]} ${parts[3]} ${parts[4]}`.replace('.', '');
-  };
+  // Ponechá celý text datumu včetně roku, aby se zobrazoval stejně i po spuštění registrace
+  const formatDisplayDate = (dateString: string) => dateString.trim();
 
   return (
     /* Zpátky k čistému Tailwindu: shora dolů. Začíná lightPink, uprostřed ztmavne do darkPink a dole se vrátí do lightPink, aby plynule navázal a nevznikl pruh */
@@ -35,10 +31,8 @@ const Application = () => {
           <div className="w-full notify-headline">
             <Notification />
             {/* max-w-3xl kontejner, který drží prvky blízko u sebe jako ve Figmě */}
-            <div className="flex flex-col md:flex-row justify-center items-center w-full max-w-3xl pt-16 mx-auto px-4 gap-2 md:gap-4">
-              
-              {/* 1. TURNUS – Pevná šířka, text doprava těsně k logu */}
-              <div className="flex flex-col items-center md:items-end justify-center w-full md:w-[240px] text-center md:text-right select-none">
+            <div className="flex flex-col items-center w-full max-w-3xl pt-16 mx-auto px-4 gap-4 md:flex-row md:justify-center md:items-center md:gap-4">
+              <div className="flex flex-col items-center w-full md:w-[240px] text-center select-none md:items-end md:text-right">
                 <h2 className="text-[#D9F216] font-black text-3xl md:text-[2.5rem] uppercase tracking-wide leading-none">
                   1. TURNUS
                 </h2>
@@ -46,18 +40,16 @@ const Application = () => {
                   17. 8. – 20. 8. 2026
                 </p>
               </div>
-              
-              {/* Velké logo přesně podle rozměrů z Figmy */}
-              <div className="flex justify-center items-center shrink-0 mx-2 md:mx-4">
+
+              <div className="flex justify-center items-center shrink-0 order-first md:order-none mx-2 md:mx-4">
                 <img 
                   src={sLogo} 
                   alt="Studentská Unie" 
-                  className="w-[170px] h-[170px] md:w-[190px] md:h-[172px] object-contain drop-shadow-sm"
+                  className="w-[150px] h-[150px] md:w-[190px] md:h-[172px] object-contain drop-shadow-sm"
                 />
               </div>
 
-              {/* 2. TURNUS – Pevná šířka, text doleva těsně od loga */}
-              <div className="flex flex-col items-center md:items-start justify-center w-full md:w-[240px] text-center md:text-left select-none">
+              <div className="flex flex-col items-center w-full md:w-[240px] text-center select-none md:items-start md:text-left">
                 <h2 className="text-[#D9F216] font-black text-3xl md:text-[2.5rem] uppercase tracking-wide leading-none">
                   2. TURNUS
                 </h2>
@@ -65,48 +57,49 @@ const Application = () => {
                   24. 8. – 27. 8. 2026
                 </p>
               </div>
-
             </div>
           </div>
         )}
         {isRegistrationOpen && (
-          <div className="flex flex-col md:flex-row justify-between items-center w-full max-w-4xl mx-auto px-4 gap-6">
-            <div className="w-full flex-1">
-              <TurnusItem
-                outOfStock={false}
-                title="1. TURNUS"
-                date={formatDisplayDate(turnus1.displayDate)}
-                currentPlaces={data?.firstBatchCapacity}
-                totalPlaces={100}
-                titleColor="text-[#D9F216]"
-                dateColor="text-darkBlue"
-                isLoading={isLoading}
-                error={error}
-                regLink="/turnus1"
-              />
-            </div>
+          <div className="flex flex-col w-full max-w-4xl mx-auto px-4 gap-6 md:flex-row md:items-center md:justify-between">
+            <div className="flex flex-col items-center gap-6 md:flex-row md:items-center md:justify-between md:gap-6 w-full">
+              <div className="w-full md:flex-1">
+                <TurnusItem
+                  outOfStock={false}
+                  title="1. TURNUS"
+                  date={formatDisplayDate(turnus1.displayDate)}
+                  currentPlaces={data?.firstBatchCapacity}
+                  totalPlaces={100}
+                  titleColor="text-[#D9F216]"
+                  dateColor="text-darkBlue"
+                  isLoading={isLoading}
+                  error={error}
+                  regLink="/turnus1"
+                />
+              </div>
 
-            <div className="flex justify-center items-center shrink-0 mx-4">
-              <img 
-                src={sLogo} 
-                alt="Studentská Unie" 
-                className="w-32 h-32 md:w-40 md:h-40 object-contain"
-              />
-            </div>
+              <div className="flex justify-center items-center shrink-0 order-first md:order-none">
+                <img 
+                  src={sLogo} 
+                  alt="Studentská Unie" 
+                  className="w-28 h-28 md:w-40 md:h-40 object-contain"
+                />
+              </div>
 
-            <div className="w-full flex-1">
-              <TurnusItem
-                outOfStock={false}
-                title="2. TURNUS"
-                date={formatDisplayDate(turnus2.displayDate)}
-                currentPlaces={data?.secondBatchCapacity}
-                totalPlaces={100}
-                titleColor="text-[#D9F216]"
-                dateColor="text-darkBlue"
-                isLoading={isLoading}
-                error={error}
-                regLink="/turnus2"
-              />
+              <div className="w-full md:flex-1">
+                <TurnusItem
+                  outOfStock={false}
+                  title="2. TURNUS"
+                  date={formatDisplayDate(turnus2.displayDate)}
+                  currentPlaces={data?.secondBatchCapacity}
+                  totalPlaces={100}
+                  titleColor="text-[#D9F216]"
+                  dateColor="text-darkBlue"
+                  isLoading={isLoading}
+                  error={error}
+                  regLink="/turnus2"
+                />
+              </div>
             </div>
           </div>
         )}
