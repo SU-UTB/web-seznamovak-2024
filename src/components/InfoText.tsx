@@ -1,6 +1,8 @@
 const InfoText = () => {
   return (
-    <div className="info-text py-6 mb-20 px-8 mt-16 mx-4 sm:w-4/5 lg:w-3/5 sm:mx-auto bg-beige rounded-3xl text-darkBlue text-lg text-left">
+    /* Šířka zvětšena na 85% na velkých obrazovkách a max-w posunuto na 6xl */
+    <div className="info-text relative py-12 mb-20 px-8 md:px-16 mt-16 mx-4 sm:w-[90%] lg:w-[85%] max-w-6xl sm:mx-auto bg-[#FBAACA] rounded-[50px] md:rounded-[80px] text-darkBlue text-lg text-center select-none">
+      
       <p className="mb-4">
         Právě se rozmýšlíš nad nejlepším rozhodnutím svého života. Jo, jakože
         FAKT!
@@ -24,11 +26,11 @@ const InfoText = () => {
         studentů, talentovaných lidí, ale hlavně to bude tvůj domov, ze kterého
         se ti bude těžce odjíždět.
       </p>
-      <p className="mb-4">
+      <p className="mb-6">
         Jdeš do toho, že jo? Tak pošli přihlášku a dojeď za námi na Bystřičku. My
         se Tě už nemůžeme dočkat!
       </p>
-      <p className="font-bold">Začíná to UTeBe, začíná to na Seznamováku!</p>
+      <p className="font-black tracking-wide">Začíná to UTeBe, začíná to na Seznamováku!</p>
     </div>
   )
 }

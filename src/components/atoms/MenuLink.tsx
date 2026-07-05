@@ -61,7 +61,7 @@ const MenuLink: React.FC<MenuLinkProps> = ({
     <a
       href={`#${sectionLink}`}
       onClick={handleClick}
-      className="font-semibold text-darkBlue text-[22px] text-center px-[15px] py-[10px] rounded-[10px] transition-all duration-300 flex-grow animate-fadein hover:bg-lightPink hover:text-darkPink"
+      className="font-semibold text-darkBlue text-[20px] text-center px-[12px] py-[2px] transition-colors duration-300 flex-grow animate-fadein hover:text-darkPink outline-none focus:outline-none active:outline-none"
     >
       {sectionName}
     </a>

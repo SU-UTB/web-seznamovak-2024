@@ -16,8 +16,10 @@ const App: React.FC = () => {
   return (
     <div className="App">
       {/* <Modal isOpen={isModalOpen} onClose={closeModal} /> */}
-      <Navbar />
-      <Overlay />
+      <div className="relative w-full">
+        <Navbar />
+        <Overlay />
+      </div>
       <Application />
       <Gallery />
       {/* <Instructors /> */}

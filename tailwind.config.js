@@ -20,7 +20,7 @@ export default {
         dark_beige: "#C2D379",
         //beige: "#FBFFE6",
         light_brown: "#D1BA79",
-        white: "#FFFFFF",
+        white: "#541515",
         /* 2025 */
         primaryDark: "#391D66",
         primary: "#592DA1",

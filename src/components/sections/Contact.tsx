@@ -2,6 +2,7 @@ import Organiser from '../moleculs/Organiser'
 import ContactSocials from '../moleculs/ContactSocials'
 import { documents } from '../../data/documents'
 import { suSocials, managersSocials } from '../../data/contacts.ts'
+import backgroundImage from '../../assets/img/bg_wave_bottom.png'
 
 import Link from '../atoms/Link'
 import SectionTitle from '../atoms/SectionTitle'
@@ -12,7 +13,11 @@ import SuSocials from '../moleculs/SuSocials'
 
 const Contact = () => {
   return (
-    <section id="kontakt" className="bg-beige text-darkBlue px-4 lg:px-0">
+    <section
+      id="kontakt"
+      className="bg-beige text-darkBlue px-4 lg:px-0 bg-cover bg-bottom bg-no-repeat"
+      style={{ backgroundImage: `url(${backgroundImage})`, backgroundPosition: 'center bottom 1px' }}
+    >
       <SectionTitle title="kontakt" color="darkBlue" />
       <div className="lg:grid lg:grid-cols-2 lg:content-end text-center lg:text-left mx-auto lg:w-4/5 gap-x-16">
         <div>
@@ -49,7 +54,7 @@ const Contact = () => {
           </div>
         </div>
       </div>
-      <div className="lg:grid lg:grid-flow-col lg:gap-x-8 2xl:gap-x-20 text-center lg:text-left mx-auto lg:w-4/5 pb-12">
+      <div className="lg:grid lg:grid-flow-col lg:gap-x-8 2xl:gap-x-20 text-center lg:text-left mx-auto lg:w-4/5 pb-12 text-darkBlue">
         <Organiser />
         <div className="documents lg:col-span-2">
           <ContactTitle title="dokumenty" color="darkBlue" />
