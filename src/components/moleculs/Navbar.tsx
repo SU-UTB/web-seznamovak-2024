@@ -37,7 +37,7 @@ const Navbar: React.FC = () => {
   };
 
   return (
-    <header className="absolute top-4 left-1/2 -translate-x-1/2 max-w-7xl w-[85%] bg-beige z-50 rounded-full shadow-sm">
+    <header className="absolute top-4 left-1/2 -translate-x-1/2 max-w-7xl w-[85%] bg-beige z-50 rounded-[32px] shadow-sm">
       <nav className="flex flex-col items-center relative py-0 px-6">
         <HamburgerBtn
           onClick={() => setIsNavOpened(!isNavOpened)}
@@ -45,10 +45,10 @@ const Navbar: React.FC = () => {
         />
         <ul
           className={
-            'flex flex-col bg-beige lg:bg-transparent rounded-[40px] lg:rounded-none lg:flex-row flex-wrap lg:justify-evenly items-center w-full absolute lg:static top-14 h-screen lg:h-auto lg:top-0 transition-all duration-300 ' +
+            'flex flex-col bg-beige lg:bg-transparent rounded-[32px] lg:rounded-none lg:flex-row flex-wrap lg:justify-evenly items-center w-full absolute lg:static top-14 max-h-[70vh] lg:max-h-none lg:h-auto lg:top-0 transition-all duration-300 overflow-hidden ' +
             (isNavOpened
-              ? 'translate-x-0'
-              : 'lg:translate-x-0 -translate-x-full')
+              ? 'opacity-100 translate-y-0 py-3'
+              : 'lg:opacity-100 lg:translate-y-0 opacity-0 max-h-0 -translate-y-4')
           }
         >
           {menuLinks.map(({ sectionLink, sectionName }) => (
@@ -59,7 +59,7 @@ const Navbar: React.FC = () => {
                 onClick={closeMenu} />
             </li>
           ))}
-          <div className="lg:hidden flex flex-wrap my-12">
+          <div className="lg:hidden flex flex-wrap my-4">
             {socialLinks.map(
               ({ socialLink, socialIconImg, socialPlatform }) => (
                 <div className="mx-8" key={socialLink}>
