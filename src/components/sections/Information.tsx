@@ -40,7 +40,7 @@ const Information = () => {
 
           {/* Dekorativní prvek uvnitř telefonu (růžový oblouk) */}
           <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-auto opacity-80 flex items-center justify-center">
-            <img src={SUlogo} alt="SU logo" className="w-[120%] h-auto" />
+            <img src={SUlogo} alt="SU logo" className="w-[40%] h-auto" />
           </div>
           <div className="absolute inset-0 bg-white/15 backdrop-blur-sm"></div>
         </div>
