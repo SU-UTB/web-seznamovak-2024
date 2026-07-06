@@ -54,7 +54,7 @@ const TurnusItem: React.FC<TurnusItemProps> = ({
           </p>
           <Link
             to={regLink}
-            className={`block px-6 py-3 text-2xl font-bold rounded-[10px] bg-darkPink text-beige`}
+            className={`block px-6 py-3 text-2xl font-bold rounded-[10px] shadow-md bg-darkPink text-beige hover:bg-beige hover:text-darkPink duration-300`}
           >
             {available ? 'PŘIHLÁSIT SE' : 'PŘIHLÁSIT SE JAKO NÁHRADNÍK'}
           </Link>

@@ -25,7 +25,7 @@ const Instructors = () => {
   }; */
 
   return (
-    <section id="instruktori" className='bg-primaryLight'>
+    <section id="instruktori" className='bg-lightPink'>
       <div className="mx-auto text-left lg:w-3/5 px-4">
         <SectionTitle
           title="S těmito frajery zažiješ nejednu divokou jízdu"
@@ -53,7 +53,7 @@ const Instructors = () => {
             },
           }}
         >
-          {instructors.map((instructor, {/*index*/}) => (
+          {instructors.map((instructor) => (
             <SwiperSlide key={instructor.pic}>
               <div
                 className="flex flex-col instructor-card gap-y-4 relative"
