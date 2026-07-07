@@ -5,8 +5,8 @@ import { useForm } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod';
 import { reservationFormSchema } from '../../utils/reservationFormSchema'
 import Confirm from '../form/Confirm'
-import podminky from '../../assets/pdf/ucastnicke-podminky-2025.pdf'
-import souhlas from '../../assets/pdf/Souhlas_se_zpracovanim_osobnich_udaju_Seznamovak_UTB_2025.pdf'
+import podminky from '../../assets/pdf/ucastnicke-podminky-2026.pdf'
+import souhlas from '../../assets/pdf/Souhlas_se_zpracovanim_osobnich_udaju_Seznamovak_UTB_2026.pdf'
 
 interface PostFormProps {
   batch: number
