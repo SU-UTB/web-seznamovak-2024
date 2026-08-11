@@ -14,7 +14,7 @@ const Navbar: React.FC = () => {
     { sectionLink: 'informace', sectionName: 'INFORMACE' },
     /* { sectionLink: 'instruktori', sectionName: 'INSTRUKTOŘI' }, */
     { sectionLink: 'faq', sectionName: 'FAQ' },
-    // { sectionLink: 'partneri', sectionName: 'PARTNEŘI' },
+    { sectionLink: 'partneri', sectionName: 'PARTNEŘI' },
     { sectionLink: 'kontakt', sectionName: 'KONTAKT' },
   ]
 

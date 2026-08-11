@@ -11,7 +11,7 @@ interface LinkProps {
 const Link: React.FC<LinkProps> = ({ linkTo, linkName, children, onClick }) => {
   return (
     <a
-      className="underline"
+      className="no-underline block"
       href={linkTo}
       target="_blank"
       rel="noopener noreferrer"

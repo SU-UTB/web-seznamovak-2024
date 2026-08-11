@@ -6,7 +6,7 @@ import Faq from './components/sections/Faq'
 import Gallery from './components/sections/Gallery'
 //import Instructors from './components/sections/Instructors'
 import Map from './components/sections/Map'
-// import Partners from './components/sections/Partners'
+import Partners from './components/sections/Partners'
 import ScrollToTopButton from './components/moleculs/ScrollToTopButton'
 import Overlay from './components/sections/Overlay'
 import { AnalyticsEvents, Firebase } from './utils/firebase'
@@ -25,7 +25,7 @@ const App: React.FC = () => {
       <Map />
       <Aftermovie />
       <Faq />
-      {/* <Partners /> */}
+      <Partners />
       <Contact />
       <ScrollToTopButton />
     </div>
