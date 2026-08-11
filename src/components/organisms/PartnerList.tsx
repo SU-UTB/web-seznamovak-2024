@@ -10,15 +10,14 @@ interface PartnerItem {
 
 interface PartnerListProps {
   items: PartnerItem[]
-  baseSize: number
 }
 
-const PartnerList: React.FC<PartnerListProps> = ({ items, baseSize = 32 }) => {
+const PartnerList: React.FC<PartnerListProps> = ({ items }) => {
   return (
-    <div className="partner-list flex flex-col sm:flex-row gap-x-8 flex-wrap items-center">
+    <div className="w-full grid grid-cols-2 md:flex md:flex-wrap justify-center gap-6 sm:gap-8 md:gap-12 items-start">
       {items.map((item) => (
         <div
-          className={`my-3 flex items-center justify-center w-${baseSize} h-${baseSize}`}
+          className="flex flex-col items-center"
           key={item.pic}
         >
           <Link
@@ -28,7 +27,19 @@ const PartnerList: React.FC<PartnerListProps> = ({ items, baseSize = 32 }) => {
               Firebase.instance.aLog(AnalyticsEvents.partnerClicked, item.link)
             }
           >
-            <img src={item.pic} alt={item.picAlt} loading="lazy" />
+            <div className="flex flex-col items-center group cursor-pointer">
+              <div className="w-28 h-28 sm:w-32 sm:h-32 md:w-36 md:h-36 flex items-center justify-center p-2 rounded-xl transition-transform group-hover:scale-105">
+                <img 
+                  src={item.pic} 
+                  alt={item.picAlt} 
+                  loading="lazy" 
+                  className="max-w-full max-h-full object-contain rounded-md" 
+                />
+              </div>
+              <span className="mt-3 text-center text-sm md:text-base font-semibold text-darkBlue">
+                {item.picAlt}
+              </span>
+            </div>
           </Link>
         </div>
       ))}
