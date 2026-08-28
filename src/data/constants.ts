@@ -24,7 +24,7 @@ export interface Turnus {
   // Řešení: Definujeme to pomocí Date.UTC(rok, měsíc_index, den, hodina_v_UTC)
   // 15:00 letního času v ČR (UTC+2) je 13:00 v UTC.
   // POZOR: Měsíce jsou indexované od 0 (6 = Červenec)
-  export const REGISTRATION_START_DATE = new Date(Date.UTC(2026, 6, 20, 13, 0, 0)); 
+  export const REGISTRATION_START_DATE = new Date(Date.UTC(2025, 6, 20, 13, 0, 0)); 
   export const REGISTRATION_END_DATE = new Date(Date.UTC(2026, 7, 24, 13, 0, 0)); 
   
   export const REGISTRATION_START_DATE_TEXT: string = "20. 7.";
